@@ -1,2 +1,2 @@
-This program is allow to compare two folders and create new folder or write to existing folder all files 
-which do not coincide betwin folders by name, size or changing time. It not compare files of nested folders.
+The program allow to compare two folders and create a new folder or write to an existing folder all files 
+which don't match betwin folders by name, size or changing time. It don't compare files of a nested folders.
