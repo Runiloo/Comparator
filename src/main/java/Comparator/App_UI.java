@@ -206,20 +206,9 @@ public class App_UI {
 		String folderNum2 = "(2)";		
 		
 		
-		/*if (files2.length>files1.length) {
-			folderNum1 = "(2)";
-			folderNum2 = "(1)";
-			for(File file: files2) {
-				filesStack.push(file);
-				}
-			files2 = files1;
-		}
-		else {*/
-			for(File file: files1) {
-				filesStack.push(file);
-				}
-		/*}*/
-		
+		for(File file: files1) {
+			filesStack.push(file);
+			}
 		for(File file: files2) {
 			filesArray.add(file);
 		}
@@ -256,14 +245,16 @@ public class App_UI {
 					}
 				}				
 			}
+			
 			if(isCoincided) continue;
+			
 			if (file1.isDirectory())
 				copyFolder(file1, foldResult, folderNum1);
 			else
 				Files.copy(file1.toPath(), destinationFolder.resolve(folderNum1 + file1.getName()), StandardCopyOption.REPLACE_EXISTING);
 		}			
 		
-		/*if in second folder files remain here it put in result folder*/
+		/*if files remain in second folder, they puted in result folder*/
 		for(File file: filesArray) {
 			if (file.isDirectory())
 				copyFolder(file, foldResult , folderNum2);
@@ -273,7 +264,7 @@ public class App_UI {
 	}
 	
 	/* 
-	 * recursive copying for folders and folders in folders
+	 * Recursive copying for folders and folders in folders
 	 * **/
 	public void copyFolder (File fold, String path, String foldNum) throws IOException {
 		File[] files = fold.listFiles();
